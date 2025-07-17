@@ -95,7 +95,6 @@ const Header = () => {
       setHTMLDropdownOpen(false);
       setCssDropdownOpen(false);
       setJsDropdownOpen(false);
-       setLoginDropdownOpen(false);
     }
   };
 
@@ -193,8 +192,6 @@ const Header = () => {
 
       <header className="bg-gray-200 text-black py-1">
         <div className="mx-auto flex justify-between items-center px-4">
-
-
           <div className="flex items-center space-x-2">
             <a href="#" onClick={handleOpen}>
               <img src={logo} className="h-6" alt="Logo" />
@@ -281,12 +278,14 @@ const Header = () => {
                   </li>
                 </ul>
               )}
+              {/* <span className="text-sm gap-1">Add Library</span> */}
               <Link to="/library" className="text-sm gap-1 hover:text-blue-700">
-             Add Library
-               </Link>
+  Add Library
+</Link>
             </div>
           </div>
 
+          {/* Middle Section: Tabs */}
           <div className="flex-grow flex justify-center">
             <div className="flex gap-1 border  rounded  shadow-md ">
               <button
@@ -324,7 +323,7 @@ const Header = () => {
 
            {/* Right Section part */}
 
-          <div className="flex space-x-4 " ref={dropdownRef} >
+          <div className="flex space-x-4 ">
             {
               user || git  ? (
                 <>
@@ -402,6 +401,7 @@ const Header = () => {
         </div>
       </header>
 
+      {/* Pane style part */}
 
       <div style={{ height: 560, overflow: "hidden" }}>
         <SplitPane split="vertical" sizes={sizes} onChange={setSizes}>
@@ -683,6 +683,7 @@ const Header = () => {
         </SplitPane>
       </div>
 
+    {/* Footer part */}
       <Footer/>
     </>
   );

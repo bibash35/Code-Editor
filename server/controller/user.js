@@ -12,7 +12,6 @@ const signup = async (req, res, next) => {
           return res.status(400).json({ error: 'Email already in use' });
       }
 
-      // Hash the password
       let hashed = await bcrypt.hash(req.body.password, 10);
 
       // Create the user

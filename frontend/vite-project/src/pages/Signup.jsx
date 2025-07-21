@@ -35,7 +35,7 @@ export default function Signup() {
     setFormError((prevErrors) => {
       const updatedErrors = { ...prevErrors };
       if (updatedErrors[name]) {
-        delete updatedErrors[name]; // Remove the error for the field
+        delete updatedErrors[name]; 
       }
       return updatedErrors;
     });
@@ -45,7 +45,7 @@ export default function Signup() {
       const handleSubmit = (e) => {
     e.preventDefault();
     setFormError({}); 
-    axios.post("https://code-editor-uyae.onrender.com/api/auth/signup", data)
+    axios.post("https://code-editor-a7w4.onrender.com/api/auth/signup", data)
       .then((res) => {
         toast.success("Signup successful");
         navigate("/login");
